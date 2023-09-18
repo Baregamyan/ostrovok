@@ -1,0 +1,1 @@
+var e=t=>document.querySelector(`.${t}`),n=t=>`${t}--opened`;function o(t,c){let r=e(t),s=e(c),i=()=>{r.classList.toggle(n(t)),s.classList.toggle(n(c))};r.addEventListener("click",()=>i())}var l="burger-button",a="nav";o(l,a);

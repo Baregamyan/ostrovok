@@ -1,0 +1,103 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  @font-face {
+    font-family: Rubik;
+    font-weight: 400;
+    src: url(/fonts/rubik-regular.woff2) format("woff2"), url(/fonts/rubik-regular.woff) format("woff");
+  }
+  @font-face {
+    font-family: Rubik;
+    font-weight: 500;
+    src: url(/fonts/rubik-500.woff2) format("woff2"), url(/fonts/rubik-500.woff) format("woff");
+  }
+  @font-face {
+    font-family: Rubik;
+    font-weight: 600;
+    src: url(/fonts/rubik-600.woff2) format("woff2"), url(/fonts/rubik-600.woff) format("woff");
+  }
+}
+
+@layer utilities {
+  .nav--opened {
+    top: 90px;
+    z-index: 0;
+  }
+
+
+  .burger-button {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    width: 43.5px;
+    height: 30px;
+
+    border-radius: 5px;
+    background-color: #6f4936;
+    transition: 0.2s all ease-in;
+  }
+
+  .burger {
+    position: relative;
+    width: 18px;
+    height: 2px;
+    background-color: #fefbf4;
+  }
+
+  .burger::before,
+  .burger::after {
+    content: "";
+    position: absolute;
+
+    left: 50%;
+    transform: translateX(-50%) rotate(0deg);
+    transition: 0.2s all ease-in;
+
+    width: 100%;
+    height: 2px;
+
+    background-color: #fefbf4;
+  }
+
+  .burger::before {
+    top: -5px;
+  }
+
+  .burger::after {
+    top: 5px;
+  }
+
+  .burger-button--opened .burger {
+    background-color: transparent;
+  }
+
+  .burger-button--opened .burger::after {
+    top: 0;
+    transform: translateX(-50%) rotate(50deg);
+  }
+
+  .burger-button--opened .burger::before {
+    top: 0;
+    transform: translateX(-50%) rotate(-50deg);
+  }
+
+  /* .container {
+    @apply flex flex-col bg-background px-[10px];
+  } */
+
+  .section {
+    @apply container bg-background mb-[100px];
+  }
+
+  .title {
+    @apply relative font-rubik font-semibold text-center mb-[20px] text-primary text-2xl before:absolute before:top-[-45px] before:left-2/4 before:-translate-x-1/2 before:content-[''] before:w-[49px] before:h-[49px] before:bg-title before:bg-no-repeat;
+  }
+
+  .text {
+    @apply text-text;
+  }
+}

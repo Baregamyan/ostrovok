@@ -1,0 +1,14 @@
+<section class="bg-yellow">
+  <div class="container py-[27px]">
+    <h2 class="sr-only">{{stats.title}}</h2>
+    <ul class="flex justify-between flex-wrap">
+      {% for number in stats.numbers %}
+        <li class="flex justify-center items-center flex-col min-w-[146px] w-2/5 min-h-[110px] bg-primary text-yellow rounded-[10px] mb-[17px]">
+          {% EleventyImage 'icons/paw.png', 'Paw', '46, 39', 'w-[46px] h-[39px] mb-[6px]'%}
+          <span class="font-semibold font-rubik text-xl">{{number.number}}</span>
+          <p class="font-rubik font-semibold uppercase">{{number.text}}</p>
+        </li>
+      {% endfor %}
+    </ul>
+  </div>
+</section>

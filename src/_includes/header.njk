@@ -1,0 +1,20 @@
+<header class="relative flex justify-between items-center mb-[56px]  ">
+  <div class="bg-background z-20 flex justify-between items-center w-full py-[10px] px-[6px] border-b-[3px] border-primary">
+    <a href="/">
+      {% SvgIcon "logo-mobile", 251, 70, "logo w-[251px] h-[70px]" %}
+    </a>
+    <button type="button" class="burger-button">
+      <span class="burger"></span>
+    </button>
+  </div>
+  <nav class="nav absolute bottom-0 w-full font-rubik top-[-40px] left-0 bg-background transition-all delay-[0.2s] ease-in z-10">
+    {% set navPages = collections.all | eleventyNavigation %}
+    <ul class="flex flex-col justify-between w-full bg-background">
+      {%- for entry in navPages %}
+        <li class="w-full bg-primary font-medium text-background uppercase py-[10px] text-center text-sm my-[2px]" {% if entry.url === page.url %} class="active" {% endif %}>
+          <a href="{{entry.url}}"> {{entry.title}}</a>
+        </li>
+      {%- endfor %}
+    </ul>
+  </nav>
+</header>

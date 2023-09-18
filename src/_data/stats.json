@@ -1,0 +1,25 @@
+{
+  "title": "Статистика",
+  "numbers": [
+    {
+      "number": 10,
+      "text": "Лет",
+      "icon": "paw"
+    },
+    {
+      "number": 10,
+      "text": "Лет",
+      "icon": "paw"
+    },
+    {
+      "number": 10,
+      "text": "Лет",
+      "icon": "paw"
+    },
+    {
+      "number": 10,
+      "text": "Лет",
+      "icon": "paw"
+    }
+  ]
+}
